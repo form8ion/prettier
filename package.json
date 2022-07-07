@@ -17,7 +17,7 @@
     "pretest:integration:base": "run-s build",
     "lint:gherkin": "gherkin-lint",
     "test:integration": "run-s 'test:integration:base -- --profile noWip'",
-    "test:integration:base": "NODE_OPTIONS=--enable-source-maps DEBUG=any cucumber-js test/integration --profile base",
+    "test:integration:base": "NODE_OPTIONS=--enable-source-maps DEBUG=any cucumber-js test/integration",
     "test:integration:debug": "DEBUG=test run-s test:integration",
     "test:integration:wip": "run-s 'test:integration:base -- --profile wip'",
     "test:integration:wip:debug": "DEBUG=test run-s 'test:integration:wip'",
@@ -44,11 +44,11 @@
   },
   "sideEffects": false,
   "runkitExampleFilename": "./example.js",
-  "main": "./lib/index.cjs.js",
-  "module": "./lib/index.es.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
   "exports": {
-    "require": "./lib/index.cjs.js",
-    "import": "./lib/index.es.js"
+    "require": "./lib/index.js",
+    "import": "./lib/index.mjs"
   },
   "version": "0.0.0-semantically-released",
   "devDependencies": {
