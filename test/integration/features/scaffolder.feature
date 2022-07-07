@@ -4,6 +4,7 @@ Feature: Scaffolder
     Given a prettier config is defined
     When the project is scaffolded
     Then the dependencies are defined
+    And the config file is created
 
   Scenario: no config provided
     Given no prettier config is defined

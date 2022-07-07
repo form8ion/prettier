@@ -13,6 +13,8 @@ After(function () {
 });
 
 When('the project is scaffolded', async function () {
+  this.scaffoldRoot = process.cwd();
+
   // eslint-disable-next-line import/no-extraneous-dependencies,import/no-unresolved
   const {scaffold} = await import('@form8ion/prettier');
 
@@ -20,7 +22,7 @@ When('the project is scaffolded', async function () {
     node_modules: stubbedNodeModules
   });
 
-  this.scaffoldResult = await scaffold({projectRoot: process.cwd(), ...this.scope && {config: {scope: this.scope}}});
+  this.scaffoldResult = await scaffold({projectRoot: this.scaffoldRoot, ...this.scope && {config: {scope: this.scope}}});
 });
 
 Then('prettier is not configured', async function () {

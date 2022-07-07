@@ -1,5 +1,12 @@
-export default function ({config}) {
+import {fileTypes} from '@form8ion/core';
+import {write} from '@form8ion/config-file';
+
+export default async function ({config, projectRoot}) {
   if (!config) return {};
 
-  return {devDependencies: ['prettier', `${config.scope}/prettier-config`]};
+  const configPackageName = `${config.scope}/prettier-config`;
+
+  await write({path: projectRoot, format: fileTypes.JSON, name: 'prettier', config: configPackageName});
+
+  return {devDependencies: ['prettier', configPackageName]};
 }
