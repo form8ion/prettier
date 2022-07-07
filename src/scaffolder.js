@@ -1,3 +1,5 @@
-export default function () {
+export default function ({config}) {
+  if (!config) return {};
+
   return {devDependencies: ['prettier']};
 }

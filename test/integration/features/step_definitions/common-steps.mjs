@@ -1,7 +1,8 @@
 import {dirname, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
-import {After, When} from '@cucumber/cucumber';
+import {After, Then, When} from '@cucumber/cucumber';
+import {assert} from 'chai';
 import stubbedFs from 'mock-fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -19,5 +20,9 @@ When('the project is scaffolded', async function () {
     node_modules: stubbedNodeModules
   });
 
-  this.scaffoldResult = await scaffold({projectRoot: process.cwd()});
+  this.scaffoldResult = await scaffold({projectRoot: process.cwd(), ...this.scope && {config: {scope: this.scope}}});
+});
+
+Then('prettier is not configured', async function () {
+  assert.deepEqual(this.scaffoldResult, {});
 });
