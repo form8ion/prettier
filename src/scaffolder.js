@@ -8,5 +8,8 @@ export default async function ({config, projectRoot}) {
 
   await write({path: projectRoot, format: fileTypes.JSON, name: 'prettier', config: configPackageName});
 
-  return {devDependencies: ['prettier', configPackageName]};
+  return {
+    eslint: {configs: ['prettier']},
+    devDependencies: ['prettier', configPackageName]
+  };
 }

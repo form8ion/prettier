@@ -1,6 +1,7 @@
 import {dirname, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
+import {fileExists} from '@form8ion/core';
 import {After, Then, When} from '@cucumber/cucumber';
 import {assert} from 'chai';
 import stubbedFs from 'mock-fs';
@@ -27,4 +28,5 @@ When('the project is scaffolded', async function () {
 
 Then('prettier is not configured', async function () {
   assert.deepEqual(this.scaffoldResult, {});
+  assert.isFalse(await fileExists(`${this.scaffoldRoot}/.prettierrc.json`));
 });

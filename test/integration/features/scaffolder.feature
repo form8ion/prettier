@@ -5,6 +5,7 @@ Feature: Scaffolder
     When the project is scaffolded
     Then the dependencies are defined
     And the config file is created
+    And the eslint config is defined
 
   Scenario: no config provided
     Given no prettier config is defined

@@ -23,9 +23,10 @@ suite('scaffolder', () => {
     const projectRoot = any.string();
     const configPackageName = `${scope}/prettier-config`;
 
-    const {devDependencies} = await scaffold({config: {scope}, projectRoot});
+    const {devDependencies, eslint} = await scaffold({config: {scope}, projectRoot});
 
     assert.deepEqual(devDependencies, ['prettier', configPackageName]);
+    assert.deepEqual(eslint, {configs: ['prettier']});
     assert.calledWith(
       configFile.write,
       {path: projectRoot, format: fileTypes.JSON, name: 'prettier', config: configPackageName}
