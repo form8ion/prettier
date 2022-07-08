@@ -20,6 +20,22 @@ form8ion plugin for projects that manage code style with prettier
   * [Dependencies](#dependencies)
   * [Verification](#verification)
 
+## Features
+
+* Configures prettier in the scaffolded project to extend the provided
+  [shareable config](https://prettier.io/docs/en/configuration.html#sharing-configurations)
+* Installs the provided shareable config
+* Installs the related eslint config and configures eslint to use it
+
+### Notes
+
+* prettier will only be configured if a config scope is defined
+* the shareable config is expected to define a dependency on `prettier`, so the
+  scaffolded project will not be configured to depend directly on `prettier`
+* the pretter and eslint config names are defined by convention, so packages
+  that are named as `@<your-scope>/prettier-config` and
+  `@<your-scope>/eslint-config-prettier` are expected to exist
+
 ## Usage
 
 <!--consumer-badges start -->

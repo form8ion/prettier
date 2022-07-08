@@ -10,6 +10,6 @@ export default async function ({config, projectRoot}) {
 
   return {
     eslint: {configs: ['prettier']},
-    devDependencies: ['prettier', configPackageName]
+    devDependencies: [configPackageName]
   };
 }

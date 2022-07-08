@@ -25,7 +25,7 @@ suite('scaffolder', () => {
 
     const {devDependencies, eslint} = await scaffold({config: {scope}, projectRoot});
 
-    assert.deepEqual(devDependencies, ['prettier', configPackageName]);
+    assert.deepEqual(devDependencies, [configPackageName]);
     assert.deepEqual(eslint, {configs: ['prettier']});
     assert.calledWith(
       configFile.write,
