@@ -6,7 +6,12 @@ export default async function ({config, projectRoot}) {
 
   const configPackageName = `${config.scope}/prettier-config`;
 
-  await write({path: projectRoot, format: fileTypes.JSON, name: 'prettier', config: configPackageName});
+  await write({
+    path: projectRoot,
+    format: fileTypes.JSON,
+    name: 'prettier',
+    config: configPackageName
+  });
 
   return {
     eslint: {configs: ['prettier']},

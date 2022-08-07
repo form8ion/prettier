@@ -7,7 +7,9 @@ import {assert} from 'chai';
 import stubbedFs from 'mock-fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const stubbedNodeModules = stubbedFs.load(resolve(__dirname, '..', '..', '..', '..', 'node_modules'));
+const stubbedNodeModules = stubbedFs.load(
+  resolve(__dirname, '..', '..', '..', '..', 'node_modules')
+);
 
 After(function () {
   stubbedFs.restore();
@@ -23,7 +25,10 @@ When('the project is scaffolded', async function () {
     node_modules: stubbedNodeModules
   });
 
-  this.scaffoldResult = await scaffold({projectRoot: this.scaffoldRoot, ...this.scope && {config: {scope: this.scope}}});
+  this.scaffoldResult = await scaffold({
+    projectRoot: this.scaffoldRoot,
+    ...(this.scope && {config: {scope: this.scope}})
+  });
 });
 
 Then('prettier is not configured', async function () {

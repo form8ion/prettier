@@ -23,14 +23,19 @@ suite('scaffolder', () => {
     const projectRoot = any.string();
     const configPackageName = `${scope}/prettier-config`;
 
-    const {devDependencies, eslint} = await scaffold({config: {scope}, projectRoot});
+    const {devDependencies, eslint} = await scaffold({
+      config: {scope},
+      projectRoot
+    });
 
     assert.deepEqual(devDependencies, [configPackageName]);
     assert.deepEqual(eslint, {configs: ['prettier']});
-    assert.calledWith(
-      configFile.write,
-      {path: projectRoot, format: fileTypes.JSON, name: 'prettier', config: configPackageName}
-    );
+    assert.calledWith(configFile.write, {
+      path: projectRoot,
+      format: fileTypes.JSON,
+      name: 'prettier',
+      config: configPackageName
+    });
   });
 
   test('that prettier is not scaffolded if no config is provided', async () => {

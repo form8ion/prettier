@@ -3,7 +3,7 @@ import any from '@travi/any';
 import {assert} from 'chai';
 
 Given('a prettier config is defined', async function () {
-  this.scope = `@${any.word()}`
+  this.scope = `@${any.word()}`;
 });
 
 Given('no prettier config is defined', async function () {
