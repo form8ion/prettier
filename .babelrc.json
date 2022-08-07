@@ -1,8 +1,4 @@
 {
-  "presets": [
-    "@form8ion"
-  ],
-  "ignore": [
-    "./lib/"
-  ]
+  "presets": ["@form8ion"],
+  "ignore": ["./lib/"]
 }
