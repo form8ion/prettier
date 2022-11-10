@@ -2,11 +2,23 @@
   "name": "@form8ion/prettier",
   "description": "form8ion plugin for projects that manage code style with prettier",
   "license": "MIT",
+  "version": "0.0.0-semantically-released",
   "type": "commonjs",
+  "engines": {
+    "node": "^14.18 || >=16"
+  },
+  "author": "Matt Travi <npm@travi.org> (https://matt.travi.org)",
   "repository": "form8ion/prettier",
   "bugs": "https://github.com/form8ion/prettier/issues",
   "homepage": "https://npm.im/@form8ion/prettier",
-  "author": "Matt Travi <npm@travi.org> (https://matt.travi.org)",
+  "runkitExampleFilename": "./example.js",
+  "exports": {
+    "require": "./lib/index.js",
+    "import": "./lib/index.mjs"
+  },
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "sideEffects": false,
   "scripts": {
     "build:js": "rollup --config",
     "watch": "run-s 'build:js -- --watch'",
@@ -43,17 +55,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": false,
-  "runkitExampleFilename": "./example.js",
-  "main": "./lib/index.js",
-  "module": "./lib/index.mjs",
-  "exports": {
-    "require": "./lib/index.js",
-    "import": "./lib/index.mjs"
-  },
-  "version": "0.0.0-semantically-released",
-  "engines": {
-    "node": "^14.18 || >=16"
+  "dependencies": {
+    "@form8ion/config-file": "^1.0.1",
+    "@form8ion/core": "^2.0.0"
   },
   "devDependencies": {
     "@babel/register": "7.18.9",
@@ -63,7 +67,7 @@
     "@form8ion/eslint-config": "5.0.14",
     "@form8ion/eslint-config-cucumber": "1.4.1",
     "@form8ion/eslint-config-mocha": "2.0.3",
-	"@form8ion/prettier-config": "1.0.0-alpha.1",
+    "@form8ion/prettier-config": "1.0.0-alpha.1",
     "@form8ion/remark-lint-preset": "4.0.2",
     "@rollup/plugin-babel": "6.0.2",
     "@travi/any": "2.1.6",
@@ -86,9 +90,5 @@
     "rollup": "2.79.1",
     "rollup-plugin-auto-external": "2.0.0",
     "sinon": "14.0.2"
-  },
-  "dependencies": {
-    "@form8ion/config-file": "^1.0.1",
-    "@form8ion/core": "^2.0.0"
   }
 }
