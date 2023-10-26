@@ -6,6 +6,7 @@ form8ion plugin for projects that manage code style with prettier
 
 [![Node CI Workflow Status][github-actions-ci-badge]][github-actions-ci-link]
 [![Codecov][coverage-badge]][coverage-link]
+![SLSA Level 2][slsa-badge]
 
 <!--status-badges end -->
 
@@ -135,3 +136,5 @@ $ npm test
 [runkit-badge]: https://badge.runkitcdn.com/@form8ion/prettier.svg
 
 [node-badge]: https://img.shields.io/node/v/@form8ion/prettier?logo=node.js
+
+[slsa-badge]: https://slsa.dev/images/gh-badge-level2.svg
