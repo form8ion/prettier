@@ -14,12 +14,12 @@ describe('scaffolder', () => {
     const projectRoot = any.string();
     const configPackageName = `${scope}/prettier-config`;
 
-    const {devDependencies, eslint} = await scaffold({
+    const {dependencies, eslint} = await scaffold({
       config: {scope},
       projectRoot
     });
 
-    expect(devDependencies).toEqual([configPackageName]);
+    expect(dependencies.javascript.development).toEqual([configPackageName]);
     expect(eslint).toEqual({configs: ['prettier']});
     expect(writeConfig).toHaveBeenCalledWith({
       path: projectRoot,

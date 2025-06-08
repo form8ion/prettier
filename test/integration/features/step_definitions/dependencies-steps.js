@@ -2,7 +2,7 @@ import assert from 'node:assert';
 import {Then} from '@cucumber/cucumber';
 
 Then('the dependencies are defined', async function () {
-  const {devDependencies} = this.scaffoldResult;
+  const {dependencies: {javascript: {development}}} = this.scaffoldResult;
 
-  assert.equal(devDependencies.includes(`${this.scope}/prettier-config`), true);
+  assert.equal(development.includes(`${this.scope}/prettier-config`), true);
 });

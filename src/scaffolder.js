@@ -15,6 +15,6 @@ export default async function scaffold({config, projectRoot}) {
 
   return {
     eslint: {configs: ['prettier']},
-    devDependencies: [configPackageName]
+    dependencies: {javascript: {development: [configPackageName]}}
   };
 }
