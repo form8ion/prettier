@@ -1,7 +1,7 @@
 import {promises as fs} from 'node:fs';
 
+import assert from 'node:assert';
 import {Then} from '@cucumber/cucumber';
-import {assert} from 'chai';
 
 Then('the config file is created', async function () {
   assert.equal(

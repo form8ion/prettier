@@ -1,6 +1,7 @@
+import assert from 'node:assert';
+
 import {Given, Then} from '@cucumber/cucumber';
 import any from '@travi/any';
-import {assert} from 'chai';
 
 Given('a prettier config is defined', async function () {
   this.scope = `@${any.word()}`;
