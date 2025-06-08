@@ -3,7 +3,7 @@
   "description": "form8ion plugin for projects that manage code style with prettier",
   "license": "MIT",
   "version": "0.0.0-semantically-released",
-  "type": "commonjs",
+  "type": "module",
   "engines": {
     "node": "^16.14 || >=18"
   },
@@ -12,12 +12,8 @@
   "bugs": "https://github.com/form8ion/prettier/issues",
   "homepage": "https://npm.im/@form8ion/prettier",
   "runkitExampleFilename": "./example.js",
-  "exports": {
-    "require": "./lib/index.js",
-    "import": "./lib/index.mjs"
-  },
+  "exports": "./lib/index.js",
   "main": "./lib/index.js",
-  "module": "./lib/index.mjs",
   "sideEffects": false,
   "scripts": {
     "build:js": "rollup --config",
@@ -64,7 +60,6 @@
     "@form8ion/core": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/register": "7.27.1",
     "@cucumber/cucumber": "9.6.0",
     "@form8ion/babel-preset": "1.6.144",
     "@form8ion/commitlint-config": "2.0.6",
@@ -73,7 +68,6 @@
     "@form8ion/eslint-config-vitest": "1.0.0",
     "@form8ion/prettier-config": "1.0.1",
     "@form8ion/remark-lint-preset": "6.0.7",
-    "@rollup/plugin-babel": "6.0.4",
     "@travi/any": "3.1.2",
     "ban-sensitive-files": "1.10.8",
     "c8": "10.1.3",

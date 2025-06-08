@@ -6,7 +6,7 @@ import {fileExists} from '@form8ion/core';
 import {After, Then, When} from '@cucumber/cucumber';
 import stubbedFs from 'mock-fs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = dirname(fileURLToPath(import.meta.url));          // eslint-disable-line no-underscore-dangle
 const stubbedNodeModules = stubbedFs.load(
   resolve(__dirname, '..', '..', '..', '..', 'node_modules')
 );
